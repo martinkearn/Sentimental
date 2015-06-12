@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+  <Id>588f58d6-4f88-46ac-9a9a-0c37105e18b4</Id>
+  <Version>1.0.0.2</Version>
+  <ProviderName>Martin Kearn</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Sentimental" />
+  <Description DefaultValue="Sentimental. Analyse sentiment and key phrases from selected text. Powered by Azure Machine Learning Text Analytics."/>
+  <IconUrl DefaultValue="https://sentimentalofficeaddin.azurewebsites.net/Images/Logo_32.png" />
+  <!--The HighResolutionIcon element is commented because it is valid only for 1.1 (or above) versions of the manifest.
+      To use this property, convert this manifest to version 1.1 by adding an API set in the Activation tab of the manifest editor.-->
+  <!--<HighResolutionIconUrl DefaultValue="https://sentimentalofficeaddin.azurewebsites.net/Images/Logo.png" />-->
+  <SupportUrl DefaultValue="https://martinkearn.azurewebsites.net/Support" />
+  <AppDomains>
+    <AppDomain>http://sentimental-officeweb.azurewebsites.net/</AppDomain>
+    <AppDomain>https://sentimental-officeweb.azurewebsites.net/</AppDomain>
+  </AppDomains>
+  <Capabilities>
+    <Capability Name="Workbook" />
+    <Capability Name="Presentation" />
+    <Capability Name="Document" />
+  </Capabilities>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://sentimentalofficeaddin.azurewebsites.net/App/Home/Home.html" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>

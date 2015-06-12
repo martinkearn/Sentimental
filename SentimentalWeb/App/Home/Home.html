@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title></title>
+    <script src="../../js/vendor/modernizr.js"></script>
+    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../../js/foundation/foundation.js"></script>
+    <script src="../../js/foundation/foundation.tooltip.js"></script>
+    <script src="../../js/foundation/foundation.tab.js"></script>
+
+    <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+    <link href="../../Content/Blackout/stylesheet.css" rel="stylesheet" />
+    <link href="../../css/foundation.min.css" rel="stylesheet" />
+
+    <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
+    <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  -->
+    <!-- <script src="../../Scripts/Office/1.1/office.js" type="text/javascript"></script>  -->
+
+    <link href="../App.css" rel="stylesheet" type="text/css" />
+    <script src="../App.js" type="text/javascript"></script>
+
+    <link href="Home.css" rel="stylesheet" type="text/css" />
+    <script src="Home.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div id="content-header">
+        <div class="padding">
+            <h1>Sentimental</h1>
+        </div>
+    </div>
+
+    <div id="content-main">
+        <div class="padding">
+
+            <p>Sentimental tells you about the sentiment and key phrases in your document.</p>
+
+            <p id="old-browser-message" style="display:none;color: darkorange;"><b>You seem to be using an old version of Internet Explorer (9 or older)</b><br />We are very sorry but we do not support older browsers, please upgrade your browser to the latest version of Internet Explorer (get it <a href="http://windows.microsoft.com/en-GB/internet-explorer/download-ie">here</a>) and try again.</p>
+
+            <ul class="tabs" data-tab id="tabs">
+                <li class="tab-title active"><a href="#Select">Select/Insert</a></li>
+                <li class="tab-title hidden"><a href="#Quick">Quick</a></li>
+                <li class="tab-title"><a href="#About">About</a></li>
+            </ul>
+            <div class="tabs-content" id="tabs-content">
+                <div class="content active" id="Select">
+                    <div class="padding">
+
+                        <input id="selection-mode-check" class="hidden" type="checkbox" checked="checked">
+
+                        <p id="selection-mode-intro-text" class="">Select something to get started.</p>
+
+                        <button class="radius" id="analyse-button"><i class="fa fa-magic"></i> Analyse</button>
+
+                        <p id="analysis-intro-text" class="hidden"></p>
+                        <div id="sentiment-progress" class="progress round hidden">
+                            <div id="sentiment-meter" style="width:0%;" class="meter">
+                                <div id="sentiment-score" name="sentiment-score" class="result"></div>
+                            </div>
+                        </div>
+
+                        <p>
+                            <span class="hide" id="key-phrases-header">They key phrases are ...</span>
+                            <br />
+                            <div id="key-phrases" name="key-phrases" class="key-phrases"></div>
+                        </p>
+
+                        <p class="hidden" id="buttons-intro-text">Now what would you like to do?...</p>
+
+                        <button class="hidden radius small" id="insert-score-button"><i class="fa fa-plus"></i> Insert Sentiment Score</button>
+                        <br />
+                        <button class="hidden radius small" id="insert-phrases-button"><i class="fa fa-plus"></i> Insert Key Phrases</button>
+                        <br />
+                        <button class="hidden radius small" id="analyse-new-button"><i class="fa fa-repeat"></i> Select something new</button>
+                    </div>
+
+
+                </div>
+                <div class="content" id="Quick">
+                    <p>Coming soon.</p>
+                </div>
+                <div class="content" id="About">
+                    <p>This app is a hobby project from Martin Kearn.</p>
+                    <p>Martin works as part of the 'Developer Experience' team within Microsoft UK and focuses on Web, Windows, Office and Azure. You can follow his blog here and his Tweets here.</p>
+                    <p>The sentiment analysis (the clever bit) is courtesy of he wonderfull Azure Machine Learning Text Analysis service. It rocks.</p>
+                    <p>If you have anything to say about this app you can email me on martin.kearn@microsoft.com.</p>
+                </div>
+            </div>
+
+            <p><small>Powered by Azure Machine Learning Text Analytics service</small></p>
+
+        </div>
+    </div>
+
+    <script>
+        $(document).foundation();
+    </script>
+
+    <script type="text/javascript">
+        if (navigator.userAgent.indexOf('MSIE 9.0') != -1) {
+            $("#tabs").hide();
+            $("#tabs-content").hide();
+            $("#old-browser-message").show();
+        }
+    </script>
+
+
+
+</body>
+</html>
