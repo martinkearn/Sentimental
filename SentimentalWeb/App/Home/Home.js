@@ -6,7 +6,7 @@ thisapp.score = "";
 thisapp.keyphrases = "";
 
 //Please replace this key with your own key for your instance of the Azure Machine Learning Text Analysis service
-thisapp.azureServiceKey = "TWFjaGluZUxlYXJuaW5nVGV4dEFuYWx5dGljc1NlcnZpY2VTZW50aW1lbnRBbmFseXNpczp2QUsxMkxkWWNaN21QQnFlQ3VMVFZrQVBIQVZ6MGw1ZkpXbFZpbTVUSEJzPSA=";
+thisapp.azureServiceKey = "YourKeyGoesHere";
 
 (function () {
     "use strict";
