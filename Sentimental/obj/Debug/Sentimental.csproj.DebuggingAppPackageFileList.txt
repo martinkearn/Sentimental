@@ -1,0 +1,2 @@
+bin\Debug\OfficeAppManifests\SentimentalManifest.xml
+C:\Users\mkearn\Documents\GitHub\Sentimental\Sentimental\bin\Debug\Sentimental.debugapp

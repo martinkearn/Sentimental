@@ -6,7 +6,8 @@ thisapp.score = "";
 thisapp.keyphrases = "";
 
 //Please replace this key with your own key for your instance of the Azure Machine Learning Text Analysis service
-thisapp.azureServiceKey = "YourKeyGoesHere";
+thisapp.azureServiceKey = "c1715e2472b04c1e99ad75ee6a459d64";
+thisapp.azureServiceUrlBase = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/";
 
 (function () {
     "use strict";
@@ -61,32 +62,29 @@ thisapp.azureServiceKey = "YourKeyGoesHere";
     {
         if (text != "")
         {
-            var authorization = "Basic " + thisapp.azureServiceKey;
-            var accept = "application/json";
-            var apiUrl = "https://api.datamarket.azure.com/data.ashx/amla/text-analytics/v1/GetSentiment?Text=" + text;
+            var apiUrl = thisapp.azureServiceUrlBase +"sentiment";
             $.support.cors = true;
             $.ajax({
                 beforeSend: function (xhr) {
-                    xhr.setRequestHeader("Authorization", authorization);
-                    xhr.setRequestHeader("ACCEPT", accept);
+                    xhr.setRequestHeader("Ocp-Apim-Subscription-Key", thisapp.azureServiceKey);
+                    xhr.setRequestHeader("Content-Type", "application/json");
                 },
                 url: apiUrl,
-                method: 'GET',
+                method: 'POST',
                 dataType: 'json',
-                complete: function (response) {
-                    var data = JSON.parse(response.responseText);
-
+                data: "{\"documents\":[{\"language\":\"en\",\"id\":\"1\",\"text\":\"" +text +"\"}]}",
+                success: function (response) {
                     //set the sentiment colour
                     var sentimentThemeColour = "darkorange";
-                    if (data.Score < 0.4) {
+                    if (response.documents[0].score < 0.4) {
                         sentimentThemeColour = "red";
                     }
-                    if (data.Score > 0.59) {
+                    if (response.documents[0].score > 0.59) {
                         sentimentThemeColour = "green";
                     }
 
                     //construct a more readable string showing the score as a percentage
-                    var readableSentimentScore = (data.Score * 100).toFixed(0) + "%";
+                    var readableSentimentScore = (response.documents[0].score * 100).toFixed(0) + "%";
 
                     //store in variable for insertion later
                     thisapp.score = readableSentimentScore;
@@ -95,48 +93,51 @@ thisapp.azureServiceKey = "YourKeyGoesHere";
                     $("#sentiment-score").text(readableSentimentScore);
                     $("#sentiment-meter").css("background-color", sentimentThemeColour);
                     $("#sentiment-meter").css("width", readableSentimentScore);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    app.showNotification("There's a problem!", textStatus +" " +errorThrown);
                 }
             });
         }
     }
 
     function getKeyPhraseAnaylsisData(text) {
-        if (text != "") {
-            var authorization = "Basic " + thisapp.azureServiceKey;
-            var accept = "application/json";
-            var apiUrl = "https://api.datamarket.azure.com/data.ashx/amla/text-analytics/v1/GetKeyPhrases?Text=" + text;
-            $.support.cors = true;
-            $.ajax({
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("Authorization", authorization);
-                    xhr.setRequestHeader("ACCEPT", accept);
-                },
-                url: apiUrl,
-                method: 'GET',
-                dataType: 'json',
-                complete: function (response) {
-                    var data = JSON.parse(response.responseText);
+        //if (text != "") {
+        //    var authorization = "Basic " + thisapp.azureServiceKey;
+        //    var accept = "application/json";
+        //    var apiUrl = "https://api.datamarket.azure.com/data.ashx/amla/text-analytics/v1/GetKeyPhrases?Text=" + text;
+        //    $.support.cors = true;
+        //    $.ajax({
+        //        beforeSend: function (xhr) {
+        //            xhr.setRequestHeader("Authorization", authorization);
+        //            xhr.setRequestHeader("ACCEPT", accept);
+        //        },
+        //        url: apiUrl,
+        //        method: 'GET',
+        //        dataType: 'json',
+        //        complete: function (response) {
+        //            var data = JSON.parse(response.responseText);
 
-                    //check that there are any key phrases
-                    if (data.KeyPhrases.toString() == "") {
-                        $("#key-phrases").text("[No key phrases]");
+        //            //check that there are any key phrases
+        //            if (data.KeyPhrases.toString() == "") {
+        //                $("#key-phrases").text("[No key phrases]");
 
-                        //store in variable for insertion later
-                        thisapp.keyphrases = "[No key phrases]";
-                    }
-                    else {
-                        $("#key-phrases").text("");
-                        for (var phrase in data.KeyPhrases) {
-                            $("#key-phrases").append(data.KeyPhrases[phrase] + "<br>");
-                        }
+        //                //store in variable for insertion later
+        //                thisapp.keyphrases = "[No key phrases]";
+        //            }
+        //            else {
+        //                $("#key-phrases").text("");
+        //                for (var phrase in data.KeyPhrases) {
+        //                    $("#key-phrases").append(data.KeyPhrases[phrase] + "<br>");
+        //                }
 
-                        //store in variable for insertion later
-                        thisapp.keyphrases = data.KeyPhrases.toString();
-                    }
+        //                //store in variable for insertion later
+        //                thisapp.keyphrases = data.KeyPhrases.toString();
+        //            }
 
-                }
-            });
-        }
+        //        }
+        //    });
+        //}
     }
 
     function insertScore() {
