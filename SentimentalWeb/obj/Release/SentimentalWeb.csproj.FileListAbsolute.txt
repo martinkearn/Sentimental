@@ -1,0 +1,5 @@
+C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\bin\SentimentalWeb.dll.config
+C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\bin\SentimentalWeb.dll
+C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\bin\SentimentalWeb.pdb
+C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\obj\Release\SentimentalWeb.dll
+C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\obj\Release\SentimentalWeb.pdb

@@ -1,0 +1,140 @@
+﻿/* Page-specific styling */
+        body {
+            font-size: 11pt;
+        }
+
+        p {
+            font-size: 11pt;
+        }
+
+        a {
+            font-size: 11pt;
+        }
+
+        h1 {
+            font-family: blackoutmidnight;
+            font-size: 2rem;
+            text-align: center;
+            color: darkorange;
+        }
+
+        #content-header {
+            background-color: grey;
+        }
+
+.tabs dd > a, .tabs .tab-title > a {
+    padding: 0.5rem;
+                font-family: blackoutmidnight;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+}
+
+.tabs dd.active a, .tabs .tab-title.active a {
+    background-color: darkorange;
+}
+
+.tabs-content > .content {
+    padding: 0;
+}
+
+.padding {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.tabs-content {
+border: solid 1px lightgray;
+}
+
+        button, input[type='button'], input[type='submit'], input[type='reset'] {
+            border: none;
+            font-size: 1.2rem;
+            font-family: blackoutmidnight;
+            text-align: center;
+            color: black;
+            background-color: lightgray;
+        }
+
+.switch {
+    margin-bottom: 1.25rem;
+}
+
+.switch input:checked + label {
+    background-color: darkorange;
+}
+
+            button:enabled:hover, input[type='button']:enabled:hover, input[type='submit']:enabled:hover, input[type='reset']:enabled:hover {
+                background-color: darkorange;
+                color: white;
+            }
+
+button:focus {
+            color: black;
+            background-color: lightgray;
+}
+
+        .result {
+            font-family: blackoutmidnight;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .result-header {
+            font-family: blackoutmidnight;
+            font-size: 1.2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .progress {
+            height: 40px;
+            background-color: darkgray;
+        }
+
+        .meter {
+            background-color: darkorange;
+            text-align: center;
+        }
+
+.key-phrases {
+            font-family: blackoutmidnight;
+            font-size: 1.2rem;
+}
+
+#live-selection {
+    margin-bottom: 0;
+}
+
+#sentiment-progress {
+    width: 100%;
+}
+
+#insert-score {
+    float: left;
+    margin-left: 0.5rem;
+}
+
+#analysis-intro-text {
+    max-width: 400px;
+    overflow:hidden;
+}
+
+
+#analyse-button {
+    width: 100%;
+    text-align:center;
+}
+
+#selection-mode-intro-text {
+    margin-bottom: 0px;
+}
+
+#buttons-intro-text {
+    margin-bottom: 0px;
+}
+
+#analysis-intro-text {
+    margin-bottom: 0px;
+}
