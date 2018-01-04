@@ -6,8 +6,8 @@ thisapp.score = "";
 thisapp.keyphrases = "";
 
 //Please replace this key with your own key for your instance of the Azure Machine Learning Text Analysis service
-thisapp.azureServiceKey = "c1715e2472b04c1e99ad75ee6a459d64";
-thisapp.azureServiceUrlBase = "https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/";
+thisapp.azureServiceKey = "523454f46b8a4a518c7a5afb5222d5a1";
+thisapp.azureServiceUrlBase = "https://westeurope.api.cognitive.microsoft.com/text/analytics/v2.0/";
 
 (function () {
     "use strict";
@@ -62,7 +62,8 @@ thisapp.azureServiceUrlBase = "https://westus.api.cognitive.microsoft.com/text/a
     {
         if (text != "")
         {
-            var apiUrl = thisapp.azureServiceUrlBase +"sentiment";
+            var apiUrl = thisapp.azureServiceUrlBase + "sentiment";
+            var data = "{\"documents\":[{\"language\":\"en\",\"id\":\"1\",\"text\":\"" + text + "\"}]}";
             $.support.cors = true;
             $.ajax({
                 beforeSend: function (xhr) {
@@ -72,7 +73,7 @@ thisapp.azureServiceUrlBase = "https://westus.api.cognitive.microsoft.com/text/a
                 url: apiUrl,
                 method: 'POST',
                 dataType: 'json',
-                data: "{\"documents\":[{\"language\":\"en\",\"id\":\"1\",\"text\":\"" +text +"\"}]}",
+                data: data,
                 success: function (response) {
                     //set the sentiment colour
                     var sentimentThemeColour = "darkorange";

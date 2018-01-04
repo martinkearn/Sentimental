@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="Sentimental"
-     ProductID="{9e497181-669c-409b-a9c0-8d7e408fc98c}"
+     ProductID="{310f0ee2-8cda-400c-9728-597c1e8dd7f8}"
      Version="1.0.0.0"
      SharePointMinVersion="15.0.0.0"
 >
   <Properties>
     <Title>Sentimental</Title>
-    <StartPage>http://go.microsoft.com/fwlink/?LinkID=278993</StartPage>
+    <StartPage>https://go.microsoft.com/fwlink/?LinkID=278993</StartPage>
   </Properties>
 
   <AppPrincipal>
