@@ -5,9 +5,9 @@ window.thisapp = {};
 thisapp.score = "";
 thisapp.keyphrases = "";
 
-//Please replace this key with your own key for your instance of the Azure Machine Learning Text Analysis service
-thisapp.azureServiceKey = "523454f46b8a4a518c7a5afb5222d5a1";
-thisapp.azureServiceUrlBase = "https://westeurope.api.cognitive.microsoft.com/text/analytics/v2.0/";
+//Please replace this key with your own key for your instance of the Azure Cognitive Services Text Analysis service
+thisapp.azureServiceKey = "90a77d46fae646cfab25341b4fac1bf0";
+thisapp.azureServiceUrlBase = "https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0/";
 
 (function () {
     "use strict";

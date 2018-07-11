@@ -1,2 +1,2 @@
-C:\Users\mkearn\Documents\GitHub\Sentimental\Sentimental\obj\Debug\Sentimental.csprojResolveAssemblyReference.cache
 C:\Users\mkearn\Documents\GitHub\Sentimental\Sentimental\obj\Debug\Sentimental.csproj.CoreCompileInputs.cache
+C:\Users\mkearn\Documents\GitHub\Sentimental\Sentimental\obj\Debug\Sentimental.csprojAssemblyReference.cache

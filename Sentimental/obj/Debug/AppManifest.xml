@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest"
      Name="Sentimental"
-     ProductID="{310f0ee2-8cda-400c-9728-597c1e8dd7f8}"
+     ProductID="{bc0e0e90-4fcf-4f85-bf21-b001b3eaca93}"
      Version="1.0.0.0"
      SharePointMinVersion="15.0.0.0"
 >

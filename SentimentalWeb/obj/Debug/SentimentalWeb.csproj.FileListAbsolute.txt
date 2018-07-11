@@ -1,7 +1,7 @@
 C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\bin\SentimentalWeb.dll.config
 C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\bin\SentimentalWeb.dll
 C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\bin\SentimentalWeb.pdb
-C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\obj\Debug\SentimentalWeb.csprojResolveAssemblyReference.cache
 C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\obj\Debug\SentimentalWeb.dll
 C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\obj\Debug\SentimentalWeb.pdb
 C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\obj\Debug\SentimentalWeb.csproj.CoreCompileInputs.cache
+C:\Users\mkearn\Documents\GitHub\Sentimental\SentimentalWeb\obj\Debug\SentimentalWeb.csprojAssemblyReference.cache
